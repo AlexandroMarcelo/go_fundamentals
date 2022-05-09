@@ -19,6 +19,17 @@ func main() {
 	default:
 		fmt.Println("Default case")
 	}
+
+	// Without conditions
+	// value := 1
+	switch value := 1; {
+	case value > 10:
+		fmt.Println(">10")
+	case value < 0:
+		fmt.Println("<0")
+	default:
+		fmt.Println("value >=0 and <= 10")
+	}
 }
 
 func random() int {
