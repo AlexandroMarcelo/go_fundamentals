@@ -1,0 +1,20 @@
+// Initialize a project
+go mod init path_del_proyecto
+
+// Verify the external code is not corrupted
+go mod verify
+
+// Reeplace the source code to local
+go mod edit -replace path_del_repo_online=path_del_repo_en_local
+
+// Remove the replace
+go mod edit -dropreplace path_del_repo_online
+
+// Create a package with all the external code (libraries) used by our code
+go mod vendor
+
+// Remove all the external libraries that are not being used
+go mod tidy
+
+// Help for modules
+go help mod
